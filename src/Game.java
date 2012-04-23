@@ -14,4 +14,55 @@ public class Game {
 
 	}
 
+	/**
+	 * Setup the game, get ready to play
+	 */
+	public void setup() {
+		
+	}
+	
+	/**
+	 * Play the game. This is the main game loop
+	 */
+	public void play() {
+		
+	}
+	
+	/**
+	 * Shutdown the game. This cleans up any used resources.
+	 */
+	public void shutdown() {
+		
+	}
+	
+	/**
+	 * Get a guess from the player
+	 * 
+	 * @return The player's guess
+	 */
+	public int getPlayerGuess() {
+		return 0;
+	}
+	
+	/**
+	 * Check the supplied number against the stored "correct" number.
+	 * Returns a value indicating if the number is too high, or too low, or matches.
+	 * 
+	 * @param playerGuess The number to be checked against the correct number
+	 * @return A value indicating if the guess is too high, or too low, or correct. -1 = too low, 0 = match, 1 = too high
+	 */
+	public int checkGuess(int playerGuess) {
+		return 0;
+	}
+	
+	/**
+	 * Generate a random number in the supplied range, and return it. The range will be interpreted as inclusive, not exclusive.
+	 * 
+	 * @param lowValue The bottom of the allowable range
+	 * @param highValue The top of the allowable range
+	 * @return The generated random number
+	 */
+	public int getRandomNum(int lowValue, int highValue) {
+		return 0;
+	}
 }
