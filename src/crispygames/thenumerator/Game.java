@@ -23,8 +23,10 @@ public class Game {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Game playGame = new Game();
+		
+		playGame.setup();
+		playGame.play();
 	}
 
 	/**
@@ -39,7 +41,30 @@ public class Game {
 	 * Play the game. This is the main game loop
 	 */
 	public void play() {
+		System.out.println("Welcome to the Numerator");
+		System.out.println("The goal of the game is to guess the number I am thinking of.");
+		System.out.println("Along the way I will offer hints if you get it wrong.");
+		System.out.println("Lets get started");
 		
+		boolean gameOver = false;
+		startGame();
+		
+		while (!gameOver) {
+			int guess = getPlayerGuess();
+			
+			if (guess > 0) {
+				System.out.println("Your guess was too high");
+				System.out.println();
+			} else if (guess < 0) {
+				System.out.println("Your guess was too low");
+				System.out.println();
+			} else {
+				System.out.println("You got it right");
+				gameOver = true;
+			}
+		}
+		
+		System.out.println("Congratulations!! You beat me");
 	}
 	
 	/**
