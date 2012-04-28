@@ -8,9 +8,13 @@ import java.util.Random;
  * @version 0.1
  */
 public class Game {
-
+	// Constants //////////////////////////////////////
+	public static final int NUM_RANGE_BTM = 0;
+	public static final int NUM_RANGE_TOP = 10;
+	
 	// Local Fields /////////////////////////////////////////////////////
 	private Random randGenerator;
+	private int goalNum;
 	
 	/**
 	 * @param args
@@ -32,6 +36,13 @@ public class Game {
 	 */
 	public void play() {
 		
+	}
+	
+	/**
+	 * Get ready to play a round
+	 */
+	public void startGame() {
+		goalNum = getRandomNum(NUM_RANGE_BTM, NUM_RANGE_TOP);
 	}
 	
 	/**
@@ -58,7 +69,13 @@ public class Game {
 	 * @return A value indicating if the guess is too high, or too low, or correct. -1 = too low, 0 = match, 1 = too high
 	 */
 	public int checkGuess(int playerGuess) {
-		return 0;
+		if (playerGuess > goalNum) {
+			return 1;
+		} else if (playerGuess < goalNum) {
+			return -1;
+		} else {
+			return 0;
+		}
 	}
 	
 	/**
