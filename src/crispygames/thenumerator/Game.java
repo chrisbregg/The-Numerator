@@ -1,6 +1,8 @@
 package crispygames.thenumerator;
 
+import java.util.InputMismatchException;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * This is the base for a simple guess the number game. It is responsible for running the game loop, getting input, and checking for a correct answer.
@@ -15,6 +17,7 @@ public class Game {
 	// Local Fields /////////////////////////////////////////////////////
 	private Random randGenerator;
 	private int goalNum;
+	private Scanner inputReader;
 	
 	/**
 	 * @param args
@@ -29,6 +32,7 @@ public class Game {
 	 */
 	public void setup() {
 		randGenerator = new Random();
+		inputReader = new Scanner(System.in);
 	}
 	
 	/**
@@ -58,7 +62,21 @@ public class Game {
 	 * @return The player's guess
 	 */
 	public int getPlayerGuess() {
-		return 0;
+		int playerGuess;
+		
+		while (true) {
+			try {
+				System.out.println("Enter a guess between " + NUM_RANGE_BTM + " and " + NUM_RANGE_TOP);
+				System.out.print(">");
+				playerGuess = inputReader.nextInt();
+				
+				return playerGuess;
+			} catch (InputMismatchException e) {
+				System.out.println("You must enter a valid number");
+				System.out.println();
+				continue;
+			}
+		}
 	}
 	
 	/**
