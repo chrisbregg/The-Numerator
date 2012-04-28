@@ -53,7 +53,10 @@ public class Game {
 	 * Shutdown the game. This cleans up any used resources.
 	 */
 	public void shutdown() {
+		randGenerator = null;
 		
+		inputReader.close();
+		inputReader = null;
 	}
 	
 	/**
